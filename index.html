@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a4644">
+  <meta name="description" content="Bilingual preliminary debt burden ratio calculator — Arabic and English">
+  <title>حاسبة نسبة الاستقطاع | DBR Calculator</title>
+  <style>
+:root{--green:#12594f;--green-2:#137462;--mint:#e9f6ee;--mint-2:#d8eee4;--ink:#183833;--sub:#60746f;--line:#dfebe7;--bg:#f3f7f5;--white:#fff;--red:#ad3538;--red-bg:#fff0ee;--amber:#97611d;--amber-bg:#fdf6e9;--radius:18px;font-family:system-ui,-apple-system,"Segoe UI","Tahoma",Arial,sans-serif;color:var(--ink)}*{box-sizing:border-box}body{background:var(--bg);margin:0;min-height:100vh;line-height:1.55}button,input,select{font:inherit}.top-strip{height:6px;background:linear-gradient(90deg,#0e6b58,#248b69,#b2ba76)}.container{width:min(1190px,calc(100% - 32px));margin:0 auto}.app-header{background:#fff;border-bottom:1px solid var(--line)}.nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}.brand{display:flex;align-items:center;gap:14px}.brand-emblem{display:grid;place-items:center;min-width:58px;height:49px;padding:0 8px;border-radius:11px;background:var(--green);color:white;font-size:20px;font-weight:900;letter-spacing:-1px}.brand-words{display:flex;flex-direction:column;line-height:1.3}.brand-words strong{font-size:17px}.brand-words small{color:var(--sub);font-size:12px;margin-top:6px}.header-tools{display:flex;align-items:center;gap:12px}.mini-chip{background:var(--mint);color:var(--green);font-size:12px;padding:7px 11px;border-radius:20px;font-weight:700}.lang-switch{background:transparent;border:1px solid #b8d1c7;border-radius:12px;color:var(--green);padding:9px 13px;font-weight:750;cursor:pointer}.lang-switch:hover,.lang-switch:focus-visible{border-color:var(--green);background:var(--mint)}.main-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px;align-items:start;padding-block:30px}.welcome{margin-bottom:20px}.eyebrow{margin:0 0 8px;color:var(--green);font-size:12px;font-weight:850;letter-spacing:.06em}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(25px,3vw,35px);line-height:1.3;margin-bottom:10px;letter-spacing:-.02em}.welcome>p:last-child{color:var(--sub);font-size:14px;margin-bottom:0;max-width:660px}.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 4px 19px rgba(15,53,45,.035);padding:24px;margin-bottom:19px}.panel-title{display:flex;align-items:center;gap:12px;margin-bottom:22px}.panel-title h2{font-size:17px;margin:0 0 3px}.panel-title p{margin:0;color:var(--sub);font-size:12px}.step{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;background:var(--mint);color:var(--green);font-size:13px;font-weight:850;flex-shrink:0}.results-step{background:#e2f1e9}.fields-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field>span{font-weight:700;font-size:13px}.field>span small{color:var(--sub);font-weight:500}.field-wide{grid-column:span 2}.field select,.field input{width:100%;height:46px;border:1px solid #cfdfd9;background:#fcfefd;color:var(--ink);border-radius:10px;padding:9px 12px;min-width:0;outline:none;font-variant-numeric:tabular-nums}.field select:focus,.field input:focus{border-color:var(--green-2);box-shadow:0 0 0 3px #e2f5ec}.input-with-unit{position:relative}.input-with-unit input{padding-inline-end:57px}.input-with-unit>span{position:absolute;inset-inline-end:12px;top:12px;color:var(--sub);font-size:12px;font-weight:700;pointer-events:none}.field-note{color:var(--sub);font-size:11px}.action-bar,.export-row{display:flex;gap:10px;flex-wrap:wrap}.action-bar{margin-top:24px;justify-content:flex-end}.button{min-height:44px;border-radius:10px;border:1px solid transparent;padding:9px 16px;font-size:13px;font-weight:800;cursor:pointer;transition:all .15s}.button-primary{color:#fff;background:var(--green)}.button-primary:hover{background:#0a443a}.button-subtle{background:#f1f5f3;color:#577268}.button-subtle:hover{background:#e2ede8}.button-outline{background:#fff;border-color:#c9dcd3;color:var(--green);flex:1}.button-outline:not(:disabled):hover{background:var(--mint)}.button:disabled{opacity:.43;cursor:not-allowed}.privacy-note{color:#547067;font-size:12px;margin:3px 6px 26px}.privacy-note span:first-child{color:var(--green)}.results{position:sticky;top:16px;margin-bottom:0}.status-card{display:flex;align-items:flex-start;gap:13px;padding:16px;border:1px solid var(--line);border-radius:13px;margin-bottom:18px;background:#f6f9f7}.status-card strong{display:block;font-size:15px}.status-card p{font-size:12px;color:var(--sub);margin:5px 0 0}.status-icon{display:grid;place-items:center;flex-shrink:0;width:33px;height:33px;background:#e4ede8;border-radius:50%;font-size:22px}.status-pass{background:var(--mint);border-color:#bbe0ce}.status-pass .status-icon{background:#c7ead6;color:var(--green)}.status-fail{background:var(--red-bg);border-color:#f3d2cc}.status-fail .status-icon{background:#f5d5d2;color:var(--red)}.status-fail strong{color:var(--red)}.status-warn{background:var(--amber-bg);border-color:#f3e2be}.status-warn .status-icon{background:#f6e3c3;color:var(--amber)}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#f9fbfa;border:1px solid #e5eeea;padding:13px 12px;border-radius:12px;min-width:0}.metric span{display:block;color:var(--sub);font-size:11px;min-height:34px}.metric strong{display:block;font-size:18px;line-height:1.4;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.details-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:24px;margin-bottom:9px}.details-heading h3{margin:0;font-size:14px}.small-badge{font-size:11px;border-radius:20px;background:#f2f6f4;padding:4px 9px;color:var(--sub)}.table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px;text-align:start;white-space:nowrap}th,td{text-align:start;padding:10px 6px;border-bottom:1px solid #e6eeeb}th{color:var(--sub);font-weight:750;font-size:11px}td:first-child{font-weight:700}td.status-exceeded{color:var(--red);font-weight:750}td.status-within{color:var(--green);font-weight:750}.empty-cell{text-align:center;color:var(--sub);padding:22px}.export-row{margin-top:20px}.disclaimer{font-size:11px;color:var(--sub);margin:16px 0 0;line-height:1.8;border-top:1px dashed var(--line);padding-top:13px}.page-footer{border-top:1px solid var(--line);padding:16px 0 30px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:11px;color:#72837d}html[dir=ltr] .welcome,html[dir=ltr] .results{text-align:left}html[dir=ltr] .button-primary span{display:inline-block;transform:scaleX(-1)}:focus-visible{outline:3px solid #84c8a9;outline-offset:2px}@media(max-width:860px){.main-grid{grid-template-columns:1fr}.results{position:static}.nav-row{padding-block:12px}.panel{padding:20px}}@media(max-width:520px){.container{width:min(100% - 22px,1190px)}.main-grid{gap:5px;padding-block:21px}.mini-chip{display:none}.fields-grid{grid-template-columns:1fr}.field-wide{grid-column:span 1}.panel{padding:18px 16px}.brand-words strong{font-size:13px}.brand-words small{font-size:10px}.brand-emblem{min-width:48px;height:44px;font-size:17px}.metric strong{font-size:16px}.page-footer{display:block}.page-footer span{display:block;margin-bottom:5px}}
+
+</style>
+</head>
+<body>
+  <div class="top-strip"></div>
+  <header class="app-header">
+    <div class="container nav-row">
+      <div class="brand" aria-label="SNB — Saudi National Bank reference calculator">
+        <span class="brand-emblem" aria-hidden="true">SNB</span>
+        <div class="brand-words"><strong data-t="bankTitle">البنك الأهلي السعودي</strong><small data-t="toolTitle">حاسبة نسبة الاستقطاع</small></div>
+      </div>
+      <div class="header-tools">
+        <span class="mini-chip" data-t="preliminary">أداة تقييم أولي</span>
+        <button class="lang-switch" type="button" id="langSwitch" aria-label="Switch language to English">English <span aria-hidden="true">↔</span></button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-grid">
+    <section class="workspace" aria-labelledby="pageTitle">
+      <div class="welcome">
+        <p class="eyebrow" data-t="welcomeEyebrow">تحليل الالتزامات البنكية</p>
+        <h1 id="pageTitle" data-t="heading">تقييم نسبة الاستقطاع وإعادة الجدولة</h1>
+        <p data-t="intro">أدخل البيانات أدناه للحصول على تقييم مبدئي فوري. جميع الحسابات تُجرى داخل جهازك دون إرسال البيانات إلى خادم.</p>
+      </div>
+      <form id="dbrForm" autocomplete="off" novalidate>
+        <div class="panel">
+          <div class="panel-title"><div class="step">01</div><div><h2 data-t="basicHeading">بيانات العميل الأساسية</h2><p data-t="basicHelp">اختر جهة إيداع الراتب والحالة الوظيفية</p></div></div>
+          <div class="fields-grid">
+            <label class="field"><span data-t="salaryLocation">جهة إيداع الراتب</span>
+              <select id="salaryDeposit" required><option value="" data-t="choose">اختر...</option><option value="at_snb" data-t="inBank">داخل البنك</option><option value="other" data-t="outBank">خارج البنك</option></select></label>
+            <label class="field"><span data-t="employment">الحالة الوظيفية</span>
+              <select id="employment" required><option value="" data-t="choose">اختر...</option><option value="salaried" data-t="salaried">موظف</option><option value="retired" data-t="retired">متقاعد</option></select></label>
+            <label class="field field-wide"><span data-t="monthlyIncome">إجمالي الدخل الشهري <small>(ر.س)</small></span>
+              <div class="input-with-unit"><input id="income" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0" required><span data-t="currency">ر.س</span></div></label>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-title"><div class="step">02</div><div><h2 data-t="commitmentsHeading">الالتزامات الشهرية</h2><p data-t="commitmentsHelp">أدخل القسط الشهري الحالي لكل منتج</p></div></div>
+          <div class="fields-grid">
+            <label class="field"><span data-t="pf">التمويل الشخصي (PF)</span><div class="input-with-unit"><input id="PF" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+            <label class="field"><span data-t="rf">التمويل العقاري (RF)</span><div class="input-with-unit"><input id="RF" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+            <label class="field"><span data-t="al">التمويل التأجيري (AL)</span><div class="input-with-unit"><input id="AL" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+            <label class="field"><span data-t="cc">البطاقة الائتمانية (CC)</span><div class="input-with-unit"><input id="CC" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+            <label class="field"><span data-t="redf">هل التمويل العقاري مدعوم من الصندوق؟</span>
+              <select id="supported"><option value="" data-t="choose">اختر...</option><option value="yes" data-t="yes">نعم</option><option value="no" data-t="no">لا</option></select>
+              <small class="field-note" data-t="redfHint">مطلوب فقط في حال وجود قسط عقاري.</small></label>
+            <label class="field"><span data-t="expenses">المصروفات المنزلية الشهرية</span><div class="input-with-unit"><input id="expenses" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+          </div>
+          <div class="action-bar"><button type="button" id="resetBtn" class="button button-subtle" data-t="reset">مسح البيانات</button><button type="submit" class="button button-primary" data-t="calculate">احسب النتيجة <span aria-hidden="true">←</span></button></div>
+        </div>
+      </form>
+      <p class="privacy-note"><span aria-hidden="true">◈</span> <span data-t="privacy">لا يتم حفظ بيانات العملاء أو إرسالها تلقائيًا لأي جهة. لا تدخل بيانات تعريف شخصية.</span></p>
+    </section>
+    <aside class="results panel" id="results" aria-labelledby="resultsHeading" aria-live="polite">
+      <div class="panel-title"><div class="step results-step">03</div><div><h2 id="resultsHeading" data-t="resultsHeading">نتيجة التقييم الأولي</h2><p data-t="resultsHelp">تتغير النتيجة مباشرةً بعد إدخال البيانات</p></div></div>
+      <div id="statusCard" class="status-card status-neutral"><div class="status-icon" id="statusIcon" aria-hidden="true">○</div><div><strong id="statusTitle">أدخل البيانات لإظهار التقييم</strong><p id="statusDescription">النتيجة إرشادية ولا تشكل موافقة ائتمانية</p></div></div>
+      <div class="metric-grid">
+        <div class="metric"><span data-t="band">شريحة الدخل</span><strong id="bandValue">—</strong></div>
+        <div class="metric"><span data-t="currentDbr">نسبة الاستقطاع الحالية</span><strong id="currentDbrValue">—</strong></div>
+        <div class="metric"><span data-t="limitDbr">نسبة الاستقطاع المسموحة</span><strong id="limitDbrValue">—</strong></div>
+        <div class="metric"><span data-t="totalRepayment">إجمالي الأقساط</span><strong id="totalRepaymentValue">—</strong></div>
+        <div class="metric"><span data-t="maxRepayment">الحد الأقصى للأقساط</span><strong id="maxRepaymentValue">—</strong></div>
+        <div class="metric"><span data-t="excess">قيمة التجاوز</span><strong id="excessValue">—</strong></div>
+        <div class="metric"><span data-t="afterBank">المتبقي بعد الأقساط</span><strong id="afterBankValue">—</strong></div>
+        <div class="metric"><span data-t="afterExpenses">المتبقي بعد المصروفات</span><strong id="afterExpensesValue">—</strong></div>
+      </div>
+      <div class="details-heading"><h3 data-t="productHeading">تفاصيل حدود المنتجات</h3><span class="small-badge" id="exceededProducts">—</span></div>
+      <div class="table-scroll"><table><thead><tr><th data-t="product">المنتج</th><th data-t="payment">القسط</th><th data-t="cap">الحد</th><th data-t="productStatus">الحالة</th></tr></thead><tbody id="productRows"><tr><td colspan="4" class="empty-cell" data-t="needInput">أدخل البيانات لعرض التفاصيل</td></tr></tbody></table></div>
+      <div class="export-row"><button class="button button-outline" type="button" id="exportJson" disabled data-t="exportJson">تصدير النتيجة JSON</button><button class="button button-outline" type="button" id="exportCsv" disabled data-t="exportCsv">تصدير CSV</button></div>
+      <p class="disclaimer" data-t="disclaimer">مصروفات المعيشة لا تدخل ضمن نسبة الاستقطاع البنكية. هذا نموذج تقييم أولي ويجب مراجعة النسب والاستثناءات قبل اعتماد أي قرار.</p>
+    </aside>
+  </main>
+  <footer class="container page-footer"><span data-t="footer">نموذج توضيحي غير رسمي — ليس نظامًا تابعًا للبنك الأهلي السعودي</span><span id="policyVersion">Policy v—</span></footer>
+  <script>
+// Local file preview fallback, regenerated from parameters.json.
+window.SNB_PARAMETERS = {
+  "version": "2026-10-20-01",
+  "currency": "SAR",
+  "thresholds": {
+    "band1Max": 15000.0,
+    "band2Exclusive": 25000.0,
+    "band3Exclusive": 40000.0
+  },
+  "rules": [
+    {
+      "band": 1,
+      "employment": "salaried",
+      "limits": {
+        "PF": 0.3333,
+        "CC": 0.3333,
+        "AL": 0.3333,
+        "RF": 0.55,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.45,
+        "globalIncludingRf": 0.55,
+        "globalIncludingRedf": 0.65
+      }
+    },
+    {
+      "band": 1,
+      "employment": "retired",
+      "limits": {
+        "PF": 0.25,
+        "CC": 0.25,
+        "AL": 0.25,
+        "RF": 0.55,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.45,
+        "globalIncludingRf": 0.55,
+        "globalIncludingRedf": 0.65
+      }
+    },
+    {
+      "band": 2,
+      "employment": "salaried",
+      "limits": {
+        "PF": 0.3333,
+        "CC": 0.3333,
+        "AL": 0.3333,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.45,
+        "globalIncludingRf": 0.65,
+        "globalIncludingRedf": 0.65
+      }
+    },
+    {
+      "band": 2,
+      "employment": "retired",
+      "limits": {
+        "PF": 0.25,
+        "CC": 0.25,
+        "AL": 0.25,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.45,
+        "globalIncludingRf": 0.65,
+        "globalIncludingRedf": 0.65
+      }
+    },
+    {
+      "band": 3,
+      "employment": "salaried",
+      "limits": {
+        "PF": 0.3333,
+        "CC": 0.3333,
+        "AL": 0.3333,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.7,
+        "globalIncludingRf": 0.7,
+        "globalIncludingRedf": 0.7
+      }
+    },
+    {
+      "band": 3,
+      "employment": "retired",
+      "limits": {
+        "PF": 0.25,
+        "CC": 0.25,
+        "AL": 0.25,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.5,
+        "globalIncludingRf": 0.65,
+        "globalIncludingRedf": 0.65
+      }
+    },
+    {
+      "band": 4,
+      "employment": "salaried",
+      "limits": {
+        "PF": 0.3333,
+        "CC": 0.3333,
+        "AL": 0.3333,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.75,
+        "globalIncludingRf": 0.75,
+        "globalIncludingRedf": 0.75
+      }
+    },
+    {
+      "band": 4,
+      "employment": "retired",
+      "limits": {
+        "PF": 0.25,
+        "CC": 0.25,
+        "AL": 0.25,
+        "RF": 0.65,
+        "REDF": 0.65,
+        "globalPfCc": 0.45,
+        "globalExcludingRf": 0.5,
+        "globalIncludingRf": 0.65,
+        "globalIncludingRedf": 0.65
+      }
+    }
+  ],
+  "notes": {
+    "en": "Preliminary DBR assessment translated from the previous workbook, not final banking policy. Footnotes A/B/C/D/E in the source image remain unverified.",
+    "ar": "نتائج أولية مطابقة لمنطق ملف إكسل السابق وليست اعتمادًا لسياسة البنك. رموز الهوامش A/B/C/D/E في الصورة المرجعية لم تُفسّر وتحتاج مراجعة."
+  }
+};
+
+</script>
+  <script>
+/**
+ * SNB-inspired preliminary debt-burden calculations.
+ * Browser and Node compatible; does not transmit or retain personal data.
+ * Policy is editable ONLY by changing the deployment's parameters.json and rebuilding
+ * parameters.js; this is NOT an authorization or credit decision engine.
+ */
+(function (root, factory) {
+  const calculator = factory();
+  if (typeof module === 'object' && module.exports) module.exports = calculator;
+  else root.DBR_ENGINE = calculator;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const PRODUCTS = ['PF', 'RF', 'AL', 'CC'];
+  const round = value => Math.round((value + Number.EPSILON) * 100) / 100;
+
+  function assess(input, parameters) {
+    if (!parameters || !Array.isArray(parameters.rules) || !parameters.thresholds)
+      return { valid: false, reason: 'policy' };
+    const { salaryDeposit, employment, supported } = input;
+    const income = Number(input.income);
+    const expenses = Number(input.expenses || 0);
+    const payments = Object.fromEntries(PRODUCTS.map(k => [k, Number(input[k] || 0)]));
+    const numbers = [income, expenses, ...Object.values(payments)];
+    if (!Number.isFinite(income) || income <= 0)
+      return { valid: false, reason: 'income' };
+    if (!['at_snb', 'other'].includes(salaryDeposit) || !['salaried', 'retired'].includes(employment))
+      return { valid: false, reason: 'details' };
+    if (numbers.some(x => !Number.isFinite(x) || x < 0))
+      return { valid: false, reason: 'numbers' };
+    if (payments.RF > 0 && !['yes', 'no'].includes(supported))
+      return { valid: false, reason: 'supported' };
+    const t = parameters.thresholds;
+    if (!(t.band1Max > 0 && t.band2Exclusive > t.band1Max && t.band3Exclusive > t.band2Exclusive))
+      return { valid: false, reason: 'policy' };
+    const band = income <= t.band1Max ? 1 : income < t.band2Exclusive ? 2 : income < t.band3Exclusive ? 3 : 4;
+    const rule = parameters.rules.find(r => r.band === band && r.employment === employment);
+    if (!rule || !rule.limits) return { valid: false, reason: 'policy' };
+    const limits = rule.limits;
+    const rateKeys = ['PF', 'CC', 'AL', 'RF', 'REDF', 'globalPfCc', 'globalExcludingRf', 'globalIncludingRf', 'globalIncludingRedf'];
+    if (rateKeys.some(k => !Number.isFinite(limits[k]) || limits[k] < 0 || limits[k] > 1))
+      return { valid: false, reason: 'policy' };
+    // Mirrors Excel precedence: supported housing > housing > auto lease > PF/CC.
+    const globalType = payments.RF > 0
+      ? (supported === 'yes' ? 'globalIncludingRedf' : 'globalIncludingRf')
+      : payments.AL > 0 ? 'globalExcludingRf' : 'globalPfCc';
+    const globalRate = limits[globalType];
+    const total = PRODUCTS.reduce((a, k) => a + payments[k], 0);
+    const maxRepayment = round(income * globalRate);
+    const itemRules = PRODUCTS.map(product => {
+      const rate = product === 'RF' && supported === 'yes' ? limits.REDF : limits[product];
+      const allowance = round(income * rate);
+      const repayment = payments[product];
+      const result = repayment <= 0 ? 'unused' : repayment > allowance + 0.00001 ? 'exceeds' : 'within';
+      return { product, repayment, rate, allowance, result };
+    });
+    const exceeded = itemRules.filter(r => r.result === 'exceeds').length;
+    const exceedsGlobal = total > maxRepayment + 0.00001;
+    return {
+      valid: true, band, employment, salaryDeposit,
+      income: round(income), expenses: round(expenses), payments,
+      total: round(total), globalType, globalRate,
+      maxRepayment, currentRate: total / income,
+      excess: round(Math.max(0, total - maxRepayment)),
+      afterBank: round(income - total), afterExpenses: round(income - total - expenses),
+      exceededProducts: exceeded, exceedsGlobal,
+      decision: exceeded > 0 || exceedsGlobal ? 'exceeds' : 'within',
+      items: itemRules, policyVersion: parameters.version || 'unknown'
+    };
+  }
+  return { assess };
+});
+
+</script>
+  <script>
+(function () {
+  'use strict';
+  const P = window.SNB_PARAMETERS;
+  const engine = window.DBR_ENGINE;
+  const $ = id => document.getElementById(id);
+  const UI = {
+    ar: {
+      bankTitle:'البنك الأهلي السعودي', toolTitle:'حاسبة نسبة الاستقطاع', preliminary:'أداة تقييم أولي',
+      welcomeEyebrow:'تحليل الالتزامات البنكية', heading:'تقييم نسبة الاستقطاع وإعادة الجدولة',
+      intro:'أدخل البيانات أدناه للحصول على تقييم مبدئي فوري. جميع الحسابات تُجرى داخل جهازك دون إرسال البيانات إلى خادم.',
+      basicHeading:'بيانات العميل الأساسية', basicHelp:'اختر جهة إيداع الراتب والحالة الوظيفية',
+      salaryLocation:'جهة إيداع الراتب',choose:'اختر...', inBank:'داخل البنك', outBank:'خارج البنك',
+      employment:'الحالة الوظيفية',salaried:'موظف',retired:'متقاعد',monthlyIncome:'إجمالي الدخل الشهري (ر.س)',
+      commitmentsHeading:'الالتزامات الشهرية',commitmentsHelp:'أدخل القسط الشهري الحالي لكل منتج',
+      pf:'التمويل الشخصي (PF)', rf:'التمويل العقاري (RF)',al:'التمويل التأجيري (AL)',cc:'البطاقة الائتمانية (CC)',
+      redf:'هل التمويل العقاري مدعوم من الصندوق؟',redfHint:'مطلوب فقط في حال وجود قسط عقاري.',
+      expenses:'المصروفات المنزلية الشهرية',currency:'ر.س',yes:'نعم',no:'لا',reset:'مسح البيانات',calculate:'احسب النتيجة',
+      privacy:'لا يتم حفظ بيانات العملاء أو إرسالها تلقائيًا لأي جهة. لا تدخل بيانات تعريف شخصية.',
+      resultsHeading:'نتيجة التقييم الأولي',resultsHelp:'تتغير النتيجة مباشرةً بعد إدخال البيانات',
+      band:'شريحة الدخل',currentDbr:'نسبة الاستقطاع الحالية',limitDbr:'نسبة الاستقطاع المسموحة',
+      totalRepayment:'إجمالي الأقساط',maxRepayment:'الحد الأقصى للأقساط',excess:'قيمة التجاوز',
+      afterBank:'المتبقي بعد الأقساط',afterExpenses:'المتبقي بعد المصروفات',
+      productHeading:'تفاصيل حدود المنتجات',product:'المنتج',payment:'القسط',cap:'الحد',productStatus:'الحالة',
+      needInput:'أدخل البيانات لعرض التفاصيل',exportJson:'تصدير النتيجة JSON',exportCsv:'تصدير CSV',
+      disclaimer:'مصروفات المعيشة لا تدخل ضمن نسبة الاستقطاع البنكية. هذا نموذج تقييم أولي ويجب مراجعة النسب والاستثناءات قبل اعتماد أي قرار.',
+      footer:'نموذج توضيحي غير رسمي — ليس نظامًا تابعًا للبنك الأهلي السعودي',
+      missing:'أدخل البيانات لإظهار التقييم',missingDesc:'النتيجة إرشادية ولا تشكل موافقة ائتمانية',
+      incomeError:'أدخل دخلًا شهريًا صحيحًا أكبر من صفر.',detailsError:'أكمل جهة الإيداع والحالة الوظيفية.',
+      numbersError:'تأكد أن جميع المبالغ أرقام صحيحة أو عشرية غير سالبة.',supportError:'حدد حالة الدعم العقاري.',
+      policyError:'إعدادات النسب غير مكتملة. راجع ملف Parameters.',
+      exceeds:'متجاوز — يحتاج مراجعة لإعادة الجدولة',within:'ضمن حدود الاستقطاع المستخدمة',
+      exceedsDesc:'تجاوز الحد الإجمالي أو حد منتج مستقل. هذه نتيجة مبدئية للمراجعة فقط.',
+      withinDesc:'لم يظهر تجاوز وفق النسب المُدخلة. لا يمثل اعتماد تمويل.',
+      productExceeds:'متجاوز',productWithin:'ضمن الحد',unused:'لا يوجد',count:'عدد المنتجات المتجاوزة:',
+      bandLabels:['','≤ 15,000','>15,000 و <25,000','≥25,000 و <40,000','≥40,000']
+    },
+    en: {
+      bankTitle:'Saudi National Bank',toolTitle:'Debt Burden Ratio Calculator',preliminary:'Preliminary screening',
+      welcomeEyebrow:'MONTHLY DEBT ANALYSIS',heading:'Debt Burden & Rescheduling Screening',
+      intro:'Enter the details to get a preliminary assessment instantly. Calculations run locally in your browser; no data is sent to a server.',
+      basicHeading:'Customer details',basicHelp:'Select salary deposit location and employment status',
+      salaryLocation:'Salary deposit location',choose:'Select...',inBank:'Within the bank',outBank:'Outside the bank',
+      employment:'Employment status',salaried:'Salaried',retired:'Retiree',monthlyIncome:'Gross monthly income (SAR)',
+      commitmentsHeading:'Monthly commitments',commitmentsHelp:'Enter current monthly repayments by product',
+      pf:'Personal Finance (PF)',rf:'Real Estate Finance (RF)',al:'Auto Lease (AL)',cc:'Credit Card (CC)',
+      redf:'Is housing finance REDF-supported?',redfHint:'Required only if there is an RF repayment.',
+      expenses:'Monthly living expenses',currency:'SAR',yes:'Yes',no:'No',reset:'Clear form',calculate:'Calculate result',
+      privacy:'Customer information is not saved or automatically sent anywhere. Do not enter personally identifiable information.',
+      resultsHeading:'Preliminary result',resultsHelp:'Results update as values change',
+      band:'Income band',currentDbr:'Current DBR',limitDbr:'Allowed DBR',totalRepayment:'Total repayments',
+      maxRepayment:'Maximum repayments',excess:'Excess amount',afterBank:'After bank repayments',afterExpenses:'After living expenses',
+      productHeading:'Product limits',product:'Product',payment:'Repayment',cap:'Limit',productStatus:'Status',
+      needInput:'Enter valid details to see the breakdown',exportJson:'Export JSON result',exportCsv:'Export CSV result',
+      disclaimer:'Living expenses do not count toward bank DBR. The rules and exceptions need internal review before making a decision.',
+      footer:'Unofficial reference prototype — not affiliated with Saudi National Bank',
+      missing:'Enter details for a result',missingDesc:'For guidance only, not a credit approval',
+      incomeError:'Enter a valid monthly income greater than zero.',detailsError:'Complete salary deposit and employment details.',
+      numbersError:'Enter nonnegative numeric amounts.',supportError:'Select REDF support status.',
+      policyError:'Policy parameters are incomplete; review the Parameters file.',
+      exceeds:'EXCEEDS LIMIT — Review rescheduling',within:'Within configured limits',
+      exceedsDesc:'At least one total or product-specific limit was exceeded. Preliminary screening only.',
+      withinDesc:'No violation under configured limits. This is not finance approval.',
+      productExceeds:'Exceeds limit',productWithin:'Within limit',unused:'Not used',count:'Exceeded products:',
+      bandLabels:['','≤ 15,000','>15,000 <25,000','≥25,000 <40,000','≥40,000']
+    }
+  };
+  let lang = 'ar', current = null;
+  function t(key) { return (UI[lang] && UI[lang][key]) || key; }
+  function num(n, digits = 2) { return Number(n).toLocaleString(lang === 'ar' ? 'en-US':'en-US', {minimumFractionDigits: digits, maximumFractionDigits: digits}); }
+  function money(n) { return num(n) + ' ' + t('currency'); }
+  function percent(n) { return num(100*n,2) + '%'; }
+  function inputs() { return {
+    salaryDeposit: $('salaryDeposit').value,
+    employment: $('employment').value,
+    income: $('income').value,PF: $('PF').value,RF: $('RF').value,
+    AL: $('AL').value,CC: $('CC').value,
+    supported: $('supported').value,expenses: $('expenses').value
+  }; }
+  function clearResult(reason) {
+    current = null;
+    const messages = {
+      income: t('incomeError'), details: t('detailsError'),
+      numbers: t('numbersError'), supported: t('supportError'), policy: t('policyError')
+    };
+    $('statusCard').className = 'status-card ' + (reason && reason!=='income'?'status-warn':'status-neutral');
+    $('statusIcon').textContent='○';
+    $('statusTitle').textContent = t('missing');
+    $('statusDescription').textContent = (reason && messages[reason]) || t('missingDesc');
+    ['bandValue','currentDbrValue','limitDbrValue','totalRepaymentValue','maxRepaymentValue','excessValue','afterBankValue','afterExpensesValue'].forEach(id => $(id).textContent='—');
+    $('exceededProducts').textContent='—';
+    $('productRows').replaceChildren();
+    const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=4;td.className='empty-cell';td.textContent=t('needInput');tr.append(td);$('productRows').append(tr);
+    $('exportJson').disabled=true;$('exportCsv').disabled=true;
+  }
+  function render(out) {
+    current = out;
+    const isOver = out.decision==='exceeds';
+    $('statusCard').className='status-card '+(isOver?'status-fail':'status-pass');
+    $('statusIcon').textContent=isOver?'!':'✓';
+    $('statusTitle').textContent=t(isOver?'exceeds':'within');
+    $('statusDescription').textContent=t(isOver?'exceedsDesc':'withinDesc');
+    const values={bandValue:t('bandLabels')[out.band],currentDbrValue:percent(out.currentRate),limitDbrValue:percent(out.globalRate),
+      totalRepaymentValue:money(out.total),maxRepaymentValue:money(out.maxRepayment),excessValue:money(out.excess),
+      afterBankValue:money(out.afterBank),afterExpensesValue:money(out.afterExpenses)};
+    for(const [id,value] of Object.entries(values))$(id).textContent=value;
+    $('exceededProducts').textContent=t('count')+' '+out.exceededProducts;
+    $('productRows').replaceChildren();
+    for(const item of out.items) {
+      const tr=document.createElement('tr');
+      const values=[item.product,money(item.repayment),percent(item.rate)+' · '+money(item.allowance),t(item.result==='exceeds'?'productExceeds':item.result==='within'?'productWithin':'unused')];
+      values.forEach((value,index)=>{const td=document.createElement('td');td.textContent=value;if(index===3)td.className=item.result==='exceeds'?'status-exceeded':'status-within';tr.append(td);});
+      $('productRows').append(tr);
+    }
+    $('exportJson').disabled=false;$('exportCsv').disabled=false;
+  }
+  function run(showErrors=false) {
+    const raw=inputs();
+    // Before the user starts, show neutral status rather than a form error.
+    if (!showErrors && (!raw.income || !raw.employment || !raw.salaryDeposit)) {clearResult(null);return;}
+    const out=engine.assess(raw,P);
+    if (!out.valid) { clearResult(out.reason); return; }
+    render(out);
+  }
+  function applyLanguage() {
+    document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    document.title=lang==='ar'?'حاسبة نسبة الاستقطاع | DBR Calculator':'Debt Burden Ratio Calculator';
+    document.querySelectorAll('[data-t]').forEach(el=>{
+      const translated=t(el.dataset.t);
+      if (el.dataset.t==='calculate') el.textContent=translated+' '+(lang==='ar'?'←':'→');
+      else el.textContent=translated;
+    });
+    $('langSwitch').innerHTML=lang==='ar'?'English <span aria-hidden="true">↔</span>':'العربية <span aria-hidden="true">↔</span>';
+    $('langSwitch').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');
+    $('policyVersion').textContent='Policy v'+(P && P.version?P.version:'—');
+    run(false);
+  }
+  function download(name,content,mime) {
+    const blob=new Blob([content],{type:mime});
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;
+    document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);
+  }
+  function exportResult(format) {
+    if (!current || !current.valid) return;
+    const o=current;
+    const payload={policyVersion:o.policyVersion,employment:o.employment,salaryDeposit:o.salaryDeposit,
+      monthlyIncome:o.income,monthlyExpenses:o.expenses,monthlyPayments:o.payments,
+      incomeBand:o.band,globalRate:o.globalRate,currentRate:o.currentRate,
+      totalRepayments:o.total,maxRepayments:o.maxRepayment,excess:o.excess,
+      afterBank:o.afterBank,afterExpenses:o.afterExpenses,decision:o.decision,
+      exceededProducts:o.exceededProducts,globalType:o.globalType,products:o.items};
+    if(format==='json') download('dbr-assessment.json',JSON.stringify(payload,null,2),'application/json;charset=utf-8');
+    else {
+      const row=['policyVersion','employment','salaryDeposit','monthlyIncome','monthlyExpenses','PF','RF','AL','CC','incomeBand','globalRate','currentRate','totalRepayments','maxRepayments','excess','afterBank','afterExpenses','decision','exceededProducts'];
+      const get=k=>Object.prototype.hasOwnProperty.call(o.payments,k)?o.payments[k]:({policyVersion:o.policyVersion,employment:o.employment,salaryDeposit:o.salaryDeposit,monthlyIncome:o.income,monthlyExpenses:o.expenses,incomeBand:o.band,globalRate:o.globalRate,currentRate:o.currentRate,totalRepayments:o.total,maxRepayments:o.maxRepayment,excess:o.excess,afterBank:o.afterBank,afterExpenses:o.afterExpenses,decision:o.decision,exceededProducts:o.exceededProducts})[k];
+      const quoted=v=>'"'+String(v==null?'':v).replaceAll('"','""')+'"';
+      download('dbr-assessment.csv','\ufeff'+row.map(quoted).join(',')+'\r\n'+row.map(k=>quoted(get(k))).join(',')+'\r\n','text/csv;charset=utf-8');
+    }
+  }
+  $('dbrForm').addEventListener('submit',e=>{e.preventDefault();run(true);});
+  $('dbrForm').addEventListener('input',()=>run(false));
+  $('dbrForm').addEventListener('change',()=>run(false));
+  $('langSwitch').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';applyLanguage();});
+  $('resetBtn').addEventListener('click',()=>{$('dbrForm').reset();clearResult(null);});
+  $('exportJson').addEventListener('click',()=>exportResult('json'));
+  $('exportCsv').addEventListener('click',()=>exportResult('csv'));
+  applyLanguage();
+})();
+
+</script>
+</body>
+</html>

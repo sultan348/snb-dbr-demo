@@ -63,7 +63,7 @@
             <label class="field"><span data-t="redf">هل التمويل العقاري مدعوم من الصندوق؟</span>
               <select id="supported"><option value="" data-t="choose">اختر...</option><option value="yes" data-t="yes">نعم</option><option value="no" data-t="no">لا</option></select>
               <small class="field-note" data-t="redfHint">مطلوب فقط في حال وجود قسط عقاري.</small></label>
-            <label class="field"><span data-t="expenses">المصروفات المنزلية الشهرية</span><div class="input-with-unit"><input id="expenses" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
+            <label class="field"><span data-t="expenses">المصروفات أو الالتزامات الشهرية الأخرى</span><div class="input-with-unit"><input id="expenses" type="number" inputmode="decimal" min="0" step="0.01" value="0"><span data-t="currency">ر.س</span></div></label>
           </div>
           <div class="action-bar"><button type="button" id="resetBtn" class="button button-subtle" data-t="reset">مسح البيانات</button><button type="submit" class="button button-primary" data-t="calculate">احسب النتيجة <span aria-hidden="true">←</span></button></div>
         </div>
@@ -319,7 +319,7 @@ window.SNB_PARAMETERS = {
       commitmentsHeading:'الالتزامات الشهرية',commitmentsHelp:'أدخل القسط الشهري الحالي لكل منتج',
       pf:'التمويل الشخصي (PF)', rf:'التمويل العقاري (RF)',al:'التمويل التأجيري (AL)',cc:'البطاقة الائتمانية (CC)',
       redf:'هل التمويل العقاري مدعوم من الصندوق؟',redfHint:'مطلوب فقط في حال وجود قسط عقاري.',
-      expenses:'المصروفات او الإلتزامات الشهريةالاخرى ',currency:'ر.س',yes:'نعم',no:'لا',reset:'مسح البيانات',calculate:'احسب النتيجة',
+      expenses:'المصروفات أو الالتزامات الشهرية الأخرى',currency:'ر.س',yes:'نعم',no:'لا',reset:'مسح البيانات',calculate:'احسب النتيجة',
       privacy:'لا يتم حفظ بيانات العملاء أو إرسالها تلقائيًا لأي جهة. لا تدخل بيانات تعريف شخصية.',
       resultsHeading:'نتيجة التقييم الأولي',resultsHelp:'تتغير النتيجة مباشرةً بعد إدخال البيانات',
       band:'شريحة الدخل',currentDbr:'نسبة الاستقطاع الحالية',limitDbr:'نسبة الاستقطاع المسموحة',
@@ -349,7 +349,7 @@ window.SNB_PARAMETERS = {
       commitmentsHeading:'Monthly commitments',commitmentsHelp:'Enter current monthly repayments by product',
       pf:'Personal Finance (PF)',rf:'Real Estate Finance (RF)',al:'Auto Lease (AL)',cc:'Credit Card (CC)',
       redf:'Is housing finance REDF-supported?',redfHint:'Required only if there is an RF repayment.',
-      expenses:'Monthly other expenses',currency:'SAR',yes:'Yes',no:'No',reset:'Clear form',calculate:'Calculate result',
+      expenses:'Other monthly expenses or obligations',currency:'SAR',yes:'Yes',no:'No',reset:'Clear form',calculate:'Calculate result',
       privacy:'Customer information is not saved or automatically sent anywhere. Do not enter personally identifiable information.',
       resultsHeading:'Preliminary result',resultsHelp:'Results update as values change',
       band:'Income band',currentDbr:'Current DBR',limitDbr:'Allowed DBR',totalRepayment:'Total repayments',

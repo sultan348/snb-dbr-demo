@@ -244,7 +244,8 @@ function assess(input,policy){
   const rateKeys=['PF','CC','AL','RF','REDF','globalPfCc','globalExcludingRf','globalIncludingRf','globalIncludingRedf'];
   if(rateKeys.some(k=>!Number.isFinite(lim[k])||lim[k]<0||lim[k]>1))return {valid:false,reason:'policy'};
   const globalType=anyHousing?(supported?'globalIncludingRedf':'globalIncludingRf'):payments.AL>0?'globalExcludingRf':'globalPfCc';
-  const globalRate=lim[globalType];
+  const upfrontFirstBand=supported&&input.subsidyType==='upfront'&&band===1;
+  const globalRate=upfrontFirstBand?0.55:lim[globalType];
   const total=round(Object.values(payments).reduce((a,v)=>a+v,0));
   // Monthly subsidy is considered ONLY to increase housing headroom. It never changes the salary band
   // or any other product limit. Extra total headroom cannot exceed the supported bank housing repayment.
@@ -252,7 +253,7 @@ function assess(input,policy){
   const appliedExtraRoom=round(Math.min(subsidyHousingCapacity,breakdown.inside.RF||0));
   const maxRepayment=round(salary*globalRate+appliedExtraRoom);
   const limits=PRODUCTS.map(product=>{
-    const rate=product==='RF'&&supported?lim.REDF:lim[product];
+    const rate=product==='RF'&&upfrontFirstBand?0.55:(product==='RF'&&supported?lim.REDF:lim[product]);
     const base=round(salary*rate);
     const added=product==='RF'?subsidyHousingCapacity:0;
     const allowance=round(base+added);

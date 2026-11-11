@@ -16,7 +16,46 @@
 /* Progressive, responsive multi-facility inputs */
 [hidden]{display:none!important}.facility-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:8px}.facility{border:1px solid #dfeae5;background:#fbfdfc;border-radius:14px;padding:14px;min-width:0}.facility-heading{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:11px}.facility-heading strong{font-size:13px}.add-button{border:1px solid #c0d9cb;background:#eaf5ef;color:#12594f;font-size:11px;font-weight:800;padding:7px 9px;border-radius:8px;cursor:pointer;white-space:nowrap}.add-button:hover{background:#dbefe4}.facility-list{display:grid;gap:8px}.facility-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.facility-entry{flex:1;min-width:125px}.facility-row input{width:100%;height:43px;border:1px solid #ccdcd3;border-radius:9px;background:white;padding:8px 10px;padding-inline-end:46px}.facility-row input:focus{outline:2px solid #8dcdb1}.facility-row .unit{position:absolute;inset-inline-end:12px;top:11px;color:#60746f;font-size:12px}.remove-button{border:1px solid #e3e9e6!important;color:#657e71!important;background:#fff!important;padding:7px 10px!important;font-size:11px!important;min-height:42px!important}.card-calc{flex-basis:100%;margin-top:-5px;color:#12594f;font-weight:800}.field-note{display:block;color:#6a7971;font-size:11px;line-height:1.55;margin-top:8px}.external-note{background:#fdf6e9;color:#91601e;padding:8px;border-radius:7px}.support-subfields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.support-basics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.summary-info{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}.summary-info .metric{background:#eef7f2}.summary-info .metric strong{font-size:15px}.extra-note{font-size:12px;color:#527164;background:#f3f9f5;border:1px solid #d5e9df;padding:11px;border-radius:9px;margin:13px 0 0}.section-subheading{font-size:12px;color:#566d61;margin:0 0 12px}.status-card .status-content{min-width:0;flex:1}.request-link{display:inline-flex;margin-top:13px;padding:10px 18px;background:#ad3538;color:#fff;border-radius:9px;text-decoration:none;font-size:13px;font-weight:750}.request-link:hover{background:#8d2b2d}.request-link[hidden]{display:none!important}.metric strong{font-size:16px}
 @media(max-width:650px){.facility-grid,.support-basics,.support-subfields,.summary-info{grid-template-columns:1fr}.facility-heading{align-items:flex-start}.facility{padding:12px}}
-[hidden]{display:none!important}.product-disclosure{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden}.product-disclosure summary{cursor:pointer;padding:14px;background:#f3f7f5;font-size:14px;font-weight:750}.product-disclosure summary .small-badge{margin-inline-start:10px}.product-disclosure .table-scroll{padding:0 10px 10px}.status-warn{background:#fff1dc;border-color:#efbc71}.status-warn strong{color:#92500d}.status-warn .status-icon{background:#ffe0b0;color:#92500d}</style></head><body>
+[hidden]{display:none!important}.product-disclosure{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden}.product-disclosure summary{cursor:pointer;padding:14px;background:#f3f7f5;font-size:14px;font-weight:750}.product-disclosure summary .small-badge{margin-inline-start:10px}.product-disclosure .table-scroll{padding:0 10px 10px}.status-warn{background:#fff1dc;border-color:#efbc71}.status-warn strong{color:#92500d}.status-warn .status-icon{background:#ffe0b0;color:#92500d}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+ :root{font-size:10pt}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ html,body{width:auto;min-height:0;background:#fff;color:#183833}
+ .container{width:100%;max-width:none;margin:0}
+ .top-strip,.header-tools,.action-bar,.add-button,.remove-button,.request-link,.privacy-note{display:none!important}
+ .app-header{border-bottom:1px solid #aac1b8}
+ .nav-row{padding:0 0 4mm}
+ .brand-emblem{min-width:42px;height:34px;font-size:13px}
+ .brand-words strong{font-size:12pt}.brand-words small{font-size:9pt}
+ .main-grid{display:block;padding:5mm 0 0}
+ .welcome{margin-bottom:4mm}h1{font-size:18pt;margin-bottom:2mm}
+ .welcome>p:last-child,.eyebrow{font-size:9pt}.author-credit{margin-bottom:2mm}
+ .panel{box-shadow:none;border:1px solid #c5d5ce;border-radius:3mm;padding:4mm;margin-bottom:4mm;break-inside:auto}
+ .panel-title{margin-bottom:3mm;break-after:avoid}.panel-title h2{font-size:12pt}.panel-title p{font-size:8pt}
+ .step{width:28px;height:28px;border-radius:6px}
+ .fields-grid,.facility-grid,.support-basics,.support-subfields{grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm}
+ .field-wide{grid-column:span 2}
+ .field,.facility,.metric,.status-card,tr{break-inside:avoid}
+ .field>span,.facility-heading strong{font-size:9pt}
+ .field input,.field select,.facility-row input{height:30px;padding:4px 7px;font-size:10pt;background:#fff;border-color:#cad7d1}
+ .input-with-unit>span,.facility-row .unit{top:6px;font-size:8pt}
+ .field-note{font-size:8pt;margin-top:2mm}
+ .facility{padding:3mm}.facility-heading{margin-bottom:2mm}.facility-row{gap:2mm}
+ .facility-entry{min-width:0}.facility-list{gap:2mm}
+ .results{position:static;top:auto;margin-top:5mm}
+ .metric-grid,.summary-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2mm}
+ .metric{padding:3mm}.metric span{font-size:8pt;min-height:0}.metric strong{font-size:11pt}
+ .status-card{padding:3mm}.status-card strong{font-size:11pt}.status-card p{font-size:9pt}
+ .product-disclosure{overflow:visible;break-inside:auto}
+ .product-disclosure summary{font-size:10pt;padding:3mm;list-style:none}
+ .product-disclosure summary::marker{content:''}
+ .product-disclosure .table-scroll{display:block!important;overflow:visible}
+ table{white-space:normal;font-size:8pt}th,td{padding:2mm 1mm}thead{display:table-header-group}
+ .disclaimer,.page-footer{font-size:8pt}.page-footer{padding:3mm 0;display:block}
+ [hidden]{display:none!important}
+}
+</style></head><body>
 <div class="top-strip"></div>
 <header class="app-header"><div class="container nav-row"><div class="brand"><span class="brand-emblem" aria-hidden="true">SA-alahmadi</span><div class="brand-words"><strong data-t="bankTitle">البنك السعودي</strong><small data-t="toolTitle">حاسبة نسبة الاستقطاع</small></div></div><div class="header-tools"><span class="mini-chip" data-t="preliminary">أداة تقييم أولي</span><button class="lang-switch" id="languageBtn" type="button">English ↔</button></div></div></header>
 <main class="container main-grid"><section class="workspace">
@@ -51,7 +90,7 @@
 <div class="facility" id="outside-AL" data-facility="AL"></div>
 <div class="facility" id="outside-CC" data-facility="CC"></div></div></div>
 
-<div class="panel"><div class="action-bar"><button id="resetBtn" class="button button-subtle" type="button" data-t="reset">مسح البيانات</button><button class="button button-primary" type="submit" data-t="calculate">احسب النتيجة</button></div></div>
+<div class="panel"><div class="action-bar"><button id="printBtn" class="button button-subtle" type="button" data-t="print">طباعة / حفظ PDF</button><button id="resetBtn" class="button button-subtle" type="button" data-t="reset">مسح البيانات</button><button class="button button-primary" type="submit" data-t="calculate">احسب النتيجة</button></div></div>
 </div></form></section>
 <aside class="results panel" id="resultsPanel" aria-live="polite"><div class="panel-title"><div class="step results-step">05</div><div><h2 data-t="resultsHeading">نتيجة التقييم الأولي</h2><p data-t="resultsHelp">تتغير النتائج مباشرة</p></div></div>
 <div class="status-card status-neutral" id="statusCard"><div class="status-icon" id="statusIcon">○</div><div class="status-content"><strong id="statusTitle">أدخل البيانات لإظهار التقييم</strong><p id="statusDescription">النتيجة إرشادية</p><a id="requestLink" class="request-link" href="https://www.alahli.com/ar/pages/eform/retail-collection" rel="noopener noreferrer" target="_blank" data-t="submitRequest" hidden>تقديم الطلب ↗</a></div></div>
@@ -91,6 +130,7 @@ UI.ar.livingExceededTitle='متجاوز الإجمالي مع المصاريف �
 UI.ar.livingExceededDesc='الاستقطاعات البنكية ضمن حدود DBR المستخدمة، لكن إجمالي العبء مع المصاريف المعيشية يتجاوز 100% من الراتب ويوجد عجز. يمكنك تقديم طلب للمراجعة.';
 UI.en.livingExceededTitle='Total burden exceeds income including other expenses';
 UI.en.livingExceededDesc='Bank obligations are within the configured DBR limits, but total burden including living expenses exceeds 100% of salary, resulting in a deficit. You can submit a request for review.';
+UI.ar.print='طباعة / حفظ PDF';UI.en.print='Print / Save PDF';
 let lang='ar';let current=null;
 const t=k=>UI[lang][k]||k;
 const money=v=>(Number(v)||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+t('currency');
@@ -262,6 +302,15 @@ function translate(){
  evaluate(false);
 }
 drawGroups();
+let printDisclosureState=[];
+window.addEventListener('beforeprint',()=>{
+ printDisclosureState=[...document.querySelectorAll('details')].map(el=>({el,open:el.open}));
+ printDisclosureState.forEach(({el})=>el.open=true);
+});
+window.addEventListener('afterprint',()=>{
+ printDisclosureState.forEach(({el,open})=>el.open=open);printDisclosureState=[];
+});
+$('printBtn').addEventListener('click',()=>window.print());
 $('dbrForm').addEventListener('submit',e=>{e.preventDefault();evaluate(true)});
 $('dbrForm').addEventListener('input',()=>evaluate(false));$('dbrForm').addEventListener('change',()=>evaluate(false));
 $('languageBtn').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';translate()});

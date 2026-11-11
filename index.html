@@ -16,7 +16,46 @@
 /* Progressive, responsive multi-facility inputs */
 [hidden]{display:none!important}.facility-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:8px}.facility{border:1px solid #dfeae5;background:#fbfdfc;border-radius:14px;padding:14px;min-width:0}.facility-heading{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:11px}.facility-heading strong{font-size:13px}.add-button{border:1px solid #c0d9cb;background:#eaf5ef;color:#12594f;font-size:11px;font-weight:800;padding:7px 9px;border-radius:8px;cursor:pointer;white-space:nowrap}.add-button:hover{background:#dbefe4}.facility-list{display:grid;gap:8px}.facility-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.facility-entry{flex:1;min-width:125px}.facility-row input{width:100%;height:43px;border:1px solid #ccdcd3;border-radius:9px;background:white;padding:8px 10px;padding-inline-end:46px}.facility-row input:focus{outline:2px solid #8dcdb1}.facility-row .unit{position:absolute;inset-inline-end:12px;top:11px;color:#60746f;font-size:12px}.remove-button{border:1px solid #e3e9e6!important;color:#657e71!important;background:#fff!important;padding:7px 10px!important;font-size:11px!important;min-height:42px!important}.card-calc{flex-basis:100%;margin-top:-5px;color:#12594f;font-weight:800}.field-note{display:block;color:#6a7971;font-size:11px;line-height:1.55;margin-top:8px}.external-note{background:#fdf6e9;color:#91601e;padding:8px;border-radius:7px}.support-subfields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.support-basics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.summary-info{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}.summary-info .metric{background:#eef7f2}.summary-info .metric strong{font-size:15px}.extra-note{font-size:12px;color:#527164;background:#f3f9f5;border:1px solid #d5e9df;padding:11px;border-radius:9px;margin:13px 0 0}.section-subheading{font-size:12px;color:#566d61;margin:0 0 12px}.status-card .status-content{min-width:0;flex:1}.request-link{display:inline-flex;margin-top:13px;padding:10px 18px;background:#ad3538;color:#fff;border-radius:9px;text-decoration:none;font-size:13px;font-weight:750}.request-link:hover{background:#8d2b2d}.request-link[hidden]{display:none!important}.metric strong{font-size:16px}
 @media(max-width:650px){.facility-grid,.support-basics,.support-subfields,.summary-info{grid-template-columns:1fr}.facility-heading{align-items:flex-start}.facility{padding:12px}}
-[hidden]{display:none!important}</style></head><body>
+[hidden]{display:none!important}.product-disclosure{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden}.product-disclosure summary{cursor:pointer;padding:14px;background:#f3f7f5;font-size:14px;font-weight:750}.product-disclosure summary .small-badge{margin-inline-start:10px}.product-disclosure .table-scroll{padding:0 10px 10px}.status-warn{background:#fff1dc;border-color:#efbc71}.status-warn strong{color:#92500d}.status-warn .status-icon{background:#ffe0b0;color:#92500d}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+ :root{font-size:10pt}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ html,body{width:auto;min-height:0;background:#fff;color:#183833}
+ .container{width:100%;max-width:none;margin:0}
+ .top-strip,.header-tools,.action-bar,.add-button,.remove-button,.request-link,.privacy-note{display:none!important}
+ .app-header{border-bottom:1px solid #aac1b8}
+ .nav-row{padding:0 0 4mm}
+ .brand-emblem{min-width:42px;height:34px;font-size:13px}
+ .brand-words strong{font-size:12pt}.brand-words small{font-size:9pt}
+ .main-grid{display:block;padding:5mm 0 0}
+ .welcome{margin-bottom:4mm}h1{font-size:18pt;margin-bottom:2mm}
+ .welcome>p:last-child,.eyebrow{font-size:9pt}.author-credit{margin-bottom:2mm}
+ .panel{box-shadow:none;border:1px solid #c5d5ce;border-radius:3mm;padding:4mm;margin-bottom:4mm;break-inside:auto}
+ .panel-title{margin-bottom:3mm;break-after:avoid}.panel-title h2{font-size:12pt}.panel-title p{font-size:8pt}
+ .step{width:28px;height:28px;border-radius:6px}
+ .fields-grid,.facility-grid,.support-basics,.support-subfields{grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm}
+ .field-wide{grid-column:span 2}
+ .field,.facility,.metric,.status-card,tr{break-inside:avoid}
+ .field>span,.facility-heading strong{font-size:9pt}
+ .field input,.field select,.facility-row input{height:30px;padding:4px 7px;font-size:10pt;background:#fff;border-color:#cad7d1}
+ .input-with-unit>span,.facility-row .unit{top:6px;font-size:8pt}
+ .field-note{font-size:8pt;margin-top:2mm}
+ .facility{padding:3mm}.facility-heading{margin-bottom:2mm}.facility-row{gap:2mm}
+ .facility-entry{min-width:0}.facility-list{gap:2mm}
+ .results{position:static;top:auto;margin-top:5mm}
+ .metric-grid,.summary-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2mm}
+ .metric{padding:3mm}.metric span{font-size:8pt;min-height:0}.metric strong{font-size:11pt}
+ .status-card{padding:3mm}.status-card strong{font-size:11pt}.status-card p{font-size:9pt}
+ .product-disclosure{overflow:visible;break-inside:auto}
+ .product-disclosure summary{font-size:10pt;padding:3mm;list-style:none}
+ .product-disclosure summary::marker{content:''}
+ .product-disclosure .table-scroll{display:block!important;overflow:visible}
+ table{white-space:normal;font-size:8pt}th,td{padding:2mm 1mm}thead{display:table-header-group}
+ .disclaimer,.page-footer{font-size:8pt}.page-footer{padding:3mm 0;display:block}
+ [hidden]{display:none!important}
+}
+</style></head><body>
 <div class="top-strip"></div>
 <header class="app-header"><div class="container nav-row"><div class="brand"><span class="brand-emblem" aria-hidden="true">SA-alahmadi</span><div class="brand-words"><strong data-t="bankTitle">البنك السعودي</strong><small data-t="toolTitle">حاسبة نسبة الاستقطاع</small></div></div><div class="header-tools"><span class="mini-chip" data-t="preliminary">أداة تقييم أولي</span><button class="lang-switch" id="languageBtn" type="button">English ↔</button></div></div></header>
 <main class="container main-grid"><section class="workspace">
@@ -32,6 +71,10 @@
 </div></div></div>
 <div id="eligibilityNotice" class="panel" hidden role="status" aria-live="polite"></div>
 <div id="calculationArea">
+<div class="panel"><div class="panel-title"><div class="step">+</div><div><h2 data-t="livingHeading"></h2><p data-t="livingHelp"></p></div></div><div class="fields-grid">
+<label class="field"><span data-t="dependents"></span><input id="dependents" type="number" min="0" step="1" inputmode="numeric" placeholder="0"></label>
+<label class="field"><span data-t="housing"></span><select id="livingHousing"><option value="" data-t="choose"></option><option value="owned" data-t="owned"></option><option value="rented" data-t="rented"></option><option value="family" data-t="family"></option><option value="provided" data-t="provided"></option></select></label>
+<label class="field" id="rentRow" hidden><span data-t="rent"></span><div class="input-with-unit"><input id="living_rent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="maid"></span><div class="input-with-unit"><input id="living_maid" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="driver"></span><div class="input-with-unit"><input id="living_driver" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="insurance"></span><div class="input-with-unit"><input id="living_insurance" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="alimony"></span><div class="input-with-unit"><input id="living_alimony" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="personalFamilyLoans"></span><div class="input-with-unit"><input id="living_personalFamilyLoans" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="future"></span><div class="input-with-unit"><input id="living_future" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="other"></span><div class="input-with-unit"><input id="living_other" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label></div></div>
 <div class="panel"><div class="panel-title"><div class="step">02</div><div><h2 data-t="insideHeading">منتجات التمويل لدى البنك</h2><p data-t="insideHelp">أدخل القسط الشهري أو حد البطاقة الائتمانية لكل منتج</p></div></div><div class="facility-grid"><div class="facility" id="inside-PF" data-facility="PF"></div>
 <div class="facility" id="inside-RF" data-facility="RF"></div>
 <div class="facility" id="inside-AL" data-facility="AL"></div>
@@ -46,11 +89,8 @@
 <div class="facility" id="outside-RF" data-facility="RF"></div>
 <div class="facility" id="outside-AL" data-facility="AL"></div>
 <div class="facility" id="outside-CC" data-facility="CC"></div></div></div>
-<div class="panel"><div class="panel-title"><div class="step">+</div><div><h2 data-t="livingHeading"></h2><p data-t="livingHelp"></p></div></div><div class="fields-grid">
-<label class="field"><span data-t="dependents"></span><input id="dependents" type="number" min="0" step="1" inputmode="numeric" placeholder="0"></label>
-<label class="field"><span data-t="housing"></span><select id="livingHousing"><option value="" data-t="choose"></option><option value="owned" data-t="owned"></option><option value="rented" data-t="rented"></option><option value="family" data-t="family"></option><option value="provided" data-t="provided"></option></select></label>
-<label class="field" id="rentRow" hidden><span data-t="rent"></span><div class="input-with-unit"><input id="living_rent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="maid"></span><div class="input-with-unit"><input id="living_maid" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="driver"></span><div class="input-with-unit"><input id="living_driver" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="insurance"></span><div class="input-with-unit"><input id="living_insurance" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="alimony"></span><div class="input-with-unit"><input id="living_alimony" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="personalFamilyLoans"></span><div class="input-with-unit"><input id="living_personalFamilyLoans" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="future"></span><div class="input-with-unit"><input id="living_future" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label><label class="field" ><span data-t="other"></span><div class="input-with-unit"><input id="living_other" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span data-t="currency"></span></div></label></div></div>
-<div class="panel"><div class="action-bar"><button id="resetBtn" class="button button-subtle" type="button" data-t="reset">مسح البيانات</button><button class="button button-primary" type="submit" data-t="calculate">احسب النتيجة</button></div></div>
+
+<div class="panel"><div class="action-bar"><button id="printBtn" class="button button-subtle" type="button" data-t="print">طباعة / حفظ PDF</button><button id="resetBtn" class="button button-subtle" type="button" data-t="reset">مسح البيانات</button><button class="button button-primary" type="submit" data-t="calculate">احسب النتيجة</button></div></div>
 </div></form></section>
 <aside class="results panel" id="resultsPanel" aria-live="polite"><div class="panel-title"><div class="step results-step">05</div><div><h2 data-t="resultsHeading">نتيجة التقييم الأولي</h2><p data-t="resultsHelp">تتغير النتائج مباشرة</p></div></div>
 <div class="status-card status-neutral" id="statusCard"><div class="status-icon" id="statusIcon">○</div><div class="status-content"><strong id="statusTitle">أدخل البيانات لإظهار التقييم</strong><p id="statusDescription">النتيجة إرشادية</p><a id="requestLink" class="request-link" href="https://www.alahli.com/ar/pages/eform/retail-collection" rel="noopener noreferrer" target="_blank" data-t="submitRequest" hidden>تقديم الطلب ↗</a></div></div>
@@ -67,8 +107,8 @@
 <div class="metric"><span data-t="outsideTotal">استقطاعات بنوك أخرى</span><strong id="outsideObligations" data-result>—</strong></div>
 <div class="metric"><span data-t="extraHeadroom">هامش الدعم العقاري الإضافي</span><strong id="extraRoomValue" data-result>—</strong></div>
 </div>
-<div class="details-heading"><h3 data-t="productHeading">تفاصيل حدود المنتجات</h3><span class="small-badge" id="exceededProducts" data-result>—</span></div>
-<div class="table-scroll"><table><thead><tr><th data-t="product">المنتج</th><th data-t="payment">الاستقطاع</th><th data-t="cap">الحد المحتسب</th><th data-t="productStatus">الحالة</th></tr></thead><tbody id="productRows"><tr><td colspan="4" class="empty-cell" data-t="needInput">أدخل البيانات</td></tr></tbody></table></div>
+<details class="product-disclosure"><summary><span data-t="productHeading">تفاصيل حدود المنتجات</span><span class="small-badge" id="exceededProducts" data-result>—</span></summary>
+<div class="table-scroll"><table><thead><tr><th data-t="product">المنتج</th><th data-t="payment">الاستقطاع</th><th data-t="cap">الحد المحتسب</th><th data-t="productStatus">الحالة</th></tr></thead><tbody id="productRows"><tr><td colspan="4" class="empty-cell" data-t="needInput">أدخل البيانات</td></tr></tbody></table></div></details>
 <section style="border-top:2px solid var(--line);margin-top:24px;padding-top:20px"><h2 style="font-size:17px" data-t="livingResult"></h2><p class="field-note" data-t="livingNote"></p><p id="livingStatus" role="status"></p><div class="metric-grid"><div class="metric"><span data-t="estimatedLiving"></span><strong id="estimatedLivingValue" data-result>—</strong></div><div class="metric"><span data-t="additionalLiving"></span><strong id="additionalLivingValue" data-result>—</strong></div><div class="metric"><span data-t="totalExpenses"></span><strong id="totalExpensesValue" data-result>—</strong></div><div class="metric"><span data-t="totalBurden"></span><strong id="totalBurdenValue" data-result>—</strong></div><div class="metric"><span data-t="remainingLiving"></span><strong id="remainingLivingValue" data-result>—</strong></div><div class="metric"><span data-t="deficitLiving"></span><strong id="deficitLivingValue" data-result>—</strong></div><div class="metric"><span data-t="burdenLiving"></span><strong id="burdenLivingValue" data-result>—</strong></div><div class="metric"><span data-t="referenceLiving"></span><strong id="referenceLivingValue" data-result>—</strong></div></div></section><p class="disclaimer" data-t="disclaimer">نتائج مبدئية، وتحتاج الحدود إلى اعتماد داخلي.</p>
 </aside></main>
 <footer class="container page-footer"><span data-t="footer">نموذج توضيحي غير رسمي — ليس نظامًا تابعًا للبنك  السعودي</span><span id="policyVersion">Policy v—</span></footer>
@@ -86,6 +126,11 @@ const UI={
 };
 Object.assign(UI.ar,{"livingHeading":"المصاريف المعيشية الشهرية","livingHelp":"تُضاف المصاريف أدناه إلى تقدير الماتريكس. لا تكرر الأقساط البنكية أو أي مبلغ مشمول بالتقدير. حوّل المصاريف السنوية إلى مبلغ شهري.","dependents":"عدد المعالين (باستثناء العميل)","housing":"نوع السكن","owned":"ملك","rented":"إيجار","family":"سكن عائلي","provided":"سكن مقدم من جهة العمل","rent":"الإيجار الشهري","maid":"العاملة المنزلية","driver":"السائق","insurance":"التأمين","alimony":"النفقة","personalFamilyLoans":"أقساط قروض شخصية / عائلية غير مدخلة ضمن التمويلات","future":"التزامات مستقبلية (شهريًا)","other":"مصاريف أخرى","livingResult":"القدرة المالية — منفصلة عن قرار DBR","livingNote":"التقدير من الماتريكس + المصاريف الإضافية + الاستقطاعات البنكية. أساس النسبة هو الراتب فقط، دون إضافة الدعم العقاري. تجاوز 100% يعني عجزًا، ولا يغيّر قرار DBR.","estimatedLiving":"المصاريف المعيشية التقديرية","additionalLiving":"المصاريف الإضافية","totalExpenses":"إجمالي المصاريف المعيشية","totalBurden":"إجمالي العبء مع الاستقطاعات البنكية","remainingLiving":"المتبقي بعد جميع المصاريف والالتزامات","deficitLiving":"العجز","burdenLiving":"نسبة العبء من الراتب","referenceLiving":"مرجع المقارنة","livingPending":"أكمل عدد المعالين ونوع السكن لعرض القدرة المالية.","livingNumbers":"تحقق من المصاريف؛ يجب إدخال مبالغ صحيحة غير سالبة.","below2500":"لا توجد قيمة تقديرية معتمدة لراتب أقل من 2,500 ر.س؛ لا يمكن حساب إجمالي المصاريف والعبء والمتبقي والعجز والنسبة.","overIncome":"العبء يتجاوز 100% من الراتب — يوجد عجز.","withinIncome":"العبء ضمن 100% من الراتب.","atIncome":"العبء يساوي 100% من الراتب — لا يوجد متبقٍ."});
 Object.assign(UI.en,{"livingHeading":"Monthly living expenses","livingHelp":"Amounts below are added to the matrix estimate. Do not repeat bank instalments or amounts covered by the estimate. Convert annual costs to monthly amounts.","dependents":"Dependents (excluding applicant)","housing":"Housing type","owned":"Owned","rented":"Rented","family":"Family housing","provided":"Employer-provided","rent":"Monthly rent","maid":"Domestic worker","driver":"Driver","insurance":"Insurance","alimony":"Alimony / maintenance","personalFamilyLoans":"Personal / family loan payments not entered as financing","future":"Future obligations (monthly)","other":"Other expenses","livingResult":"Affordability — separate from DBR decision","livingNote":"Matrix estimate + additional expenses + bank obligations. The ratio uses salary only, excluding housing subsidy. Above 100% indicates a deficit and does not change the DBR decision.","estimatedLiving":"Estimated living expenses","additionalLiving":"Additional expenses","totalExpenses":"Total living expenses","totalBurden":"Total burden including bank obligations","remainingLiving":"Remaining after all expenses and obligations","deficitLiving":"Deficit","burdenLiving":"Burden / salary","referenceLiving":"Comparison reference","livingPending":"Complete dependents and housing type to assess affordability.","livingNumbers":"Enter valid nonnegative expense amounts.","below2500":"No approved estimate exists for salary below SAR 2,500; total expenses, burden, remaining balance, deficit and ratio cannot be calculated.","overIncome":"Burden exceeds 100% of salary — deficit.","withinIncome":"Burden is within 100% of salary.","atIncome":"Burden equals 100% of salary — no remaining balance."});
+UI.ar.livingExceededTitle='متجاوز الإجمالي مع المصاريف الأخرى';
+UI.ar.livingExceededDesc='الاستقطاعات البنكية ضمن حدود DBR المستخدمة، لكن إجمالي العبء مع المصاريف المعيشية يتجاوز 100% من الراتب ويوجد عجز. يمكنك تقديم طلب للمراجعة.';
+UI.en.livingExceededTitle='Total burden exceeds income including other expenses';
+UI.en.livingExceededDesc='Bank obligations are within the configured DBR limits, but total burden including living expenses exceeds 100% of salary, resulting in a deficit. You can submit a request for review.';
+UI.ar.print='طباعة / حفظ PDF';UI.en.print='Print / Save PDF';
 let lang='ar';let current=null;
 const t=k=>UI[lang][k]||k;
 const money=v=>(Number(v)||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+t('currency');
@@ -189,7 +234,12 @@ function resetResults(reason){
 function render(o){
  renderLiving(o.living);
  current=o;lastPolicyVersion=o.policyVersion||'—';$('policyVersion').textContent='Policy v'+lastPolicyVersion;const over=o.decision==='exceeds';
- $('statusCard').className='status-card '+(over?'status-fail':'status-pass');$('statusIcon').textContent=over?'!':'✓';$('statusTitle').textContent=t(over?'exceeds':'within');$('statusDescription').textContent=t(over?'exceedsDesc':'withinDesc');$('requestLink').hidden=!over;
+ const livingOver=o.living?.available===true&&o.living.exceedsIncome===true;
+ $('statusCard').className='status-card '+(over?'status-fail':livingOver?'status-warn':'status-pass');
+ $('statusIcon').textContent=over||livingOver?'!':'✓';
+ $('statusTitle').textContent=t(over?'exceeds':livingOver?'livingExceededTitle':'within');
+ $('statusDescription').textContent=t(over?'exceedsDesc':livingOver?'livingExceededDesc':'withinDesc');
+ $('requestLink').hidden=!(over||livingOver);
  const values={bandValue:t('bandLabels')[o.band],currentDbrValue:percent(o.currentRate),limitDbrValue:percent(o.globalRate),totalRepaymentValue:money(o.total),maxRepaymentValue:money(o.maxRepayment),excessValue:money(o.excess),afterBankValue:money(o.afterBank),housingBasisValue:money(o.housingIncome),salaryBasisValue:money(o.salary),insideObligations:money(Object.values(o.breakdown.inside).reduce((a,b)=>a+b,0)),outsideObligations:money(Object.values(o.breakdown.outside).reduce((a,b)=>a+b,0)),extraRoomValue:money(o.appliedExtraRoom)};
  for(const [id,value]of Object.entries(values))$(id).textContent=value;
  $('exceededProducts').textContent=t('count')+' '+o.exceededProducts;
@@ -252,6 +302,15 @@ function translate(){
  evaluate(false);
 }
 drawGroups();
+let printDisclosureState=[];
+window.addEventListener('beforeprint',()=>{
+ printDisclosureState=[...document.querySelectorAll('details')].map(el=>({el,open:el.open}));
+ printDisclosureState.forEach(({el})=>el.open=true);
+});
+window.addEventListener('afterprint',()=>{
+ printDisclosureState.forEach(({el,open})=>el.open=open);printDisclosureState=[];
+});
+$('printBtn').addEventListener('click',()=>window.print());
 $('dbrForm').addEventListener('submit',e=>{e.preventDefault();evaluate(true)});
 $('dbrForm').addEventListener('input',()=>evaluate(false));$('dbrForm').addEventListener('change',()=>evaluate(false));
 $('languageBtn').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';translate()});
